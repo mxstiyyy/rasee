@@ -1,16 +1,11 @@
-/* Genel Ayarlar */
-body {
-    font-family: 'SF Pro Display', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #e0ffe0; /* Yeşil tonları */
-    color: #004d00; /* Yeşil metin rengi */
-    animation: fadeIn 1.5s ease-out;
-}
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@600;700&display=swap');
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+body {
+    margin: 0;
+    font-family: 'SF Pro Display', sans-serif;
+    background-color: #001a00;
+    color: #fff;
+    overflow-x: hidden;
 }
 
 /* Preloader */
@@ -20,220 +15,270 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #004d00;
+    background-color: #001a00;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     z-index: 9999;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .loader {
     width: 50px;
     height: 50px;
-    border: 5px solid #fff;
-    border-top: 5px solid #00b300;
+    border: 5px solid #00b300;
     border-radius: 50%;
+    border-top: 5px solid transparent;
     animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background-color: #004d00;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar .brand-title {
-    font-size: 24px;
-    font-weight: 700;
-    color: #fff;
+    to { transform: rotate(360deg); }
 }
 
 /* Hero Bölümü */
-.hero {
+.hero-section {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 26, 0, 0.6), rgba(0, 26, 0, 0.6)), url('https://images.unsplash.com/photo-1523264894818-08a4f5d014f1') center/cover;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: fadeInDown 1.5s ease forwards;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    max-width: 800px;
+    animation: fadeInUp 2s ease forwards;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Carousel */
+.carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+    margin-top: 20px;
+    animation: slide 10s infinite;
+}
+
+.carousel-item {
+    min-width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 102, 0, 0.7);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    100% { transform: translateX(-400%); }
+}
+
+.features-section {
+    padding: 50px 20px;
+    text-align: center;
     background-color: #004d00;
     color: #fff;
-    text-align: center;
-    padding: 0 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.hero h1 {
-    font-size: 48px;
-    margin: 0;
-    font-weight: 700;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.hero p {
-    font-size: 18px;
-    margin: 20px 0;
-}
-
-.cta-button {
-    background-color: #00b300;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #009900;
-}
-
-/* Yorumlar Bölümü */
-.comments {
-    background-color: #e6ffe6;
+/* Comments Bölümü */
+.comments-section {
     padding: 50px 20px;
+    background-color: #003300;
+    color: #fff;
 }
 
-.comments h2 {
-    color: #004d00;
-    font-size: 32px;
-    text-align: center;
+.comments-section h2 {
     margin-bottom: 20px;
+    font-size: 2rem;
 }
 
-.comments form {
+#commentForm {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 30px;
 }
 
-.comments textarea {
-    width: 100%;
-    max-width: 500px;
-    height: 100px;
+#commentInput {
+    width: 80%;
     padding: 10px;
-    border: 2px solid #004d00;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    font-family: inherit;
-    font-size: 16px;
-    resize: none;
-}
-
-.comments button {
-    background-color: #00b300;
-    color: #fff;
-    padding: 10px 20px;
     border: none;
     border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+#commentForm button {
+    padding: 10px 20px;
+    background-color: #00b300;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
     cursor: pointer;
-    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
-.comments button:hover {
-    background-color: #009900;
+#commentForm button:hover {
+    background-color: #007a00;
 }
 
-.comments ul {
+#commentList {
     list-style: none;
     padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
 }
 
-.comments li {
-    background-color: #fff;
-    border: 2px solid #004d00;
-    padding: 10px;
-    border-radius: 5px;
+#commentList li {
+    padding: 15px;
     margin-bottom: 10px;
-    max-width: 500px;
-    margin: 10px auto;
+    background-color: #004d00;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+#commentList li .delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#commentList li .delete-btn:hover {
+    color: #ff0000;
+}
+
+/* İletişim Bölümü */
+.contact-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #002600;
+    color: #fff;
 }
 
 /* Footer */
 footer {
-    background-color: #004d00;
-    color: #fff;
-    text-align: center;
     padding: 20px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    font-size: 14px;
+    text-align: center;
+    background-color: #001a00;
+    color: #00b300;
 }
 
-/* Menü ve Diğer Bölümler İçin */
+/* Navbar */
+header {
+    position: fixed;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #00b300;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+#nav-bar {
+    display: flex;
+    align-items: center;
+}
+
 .nav-list {
+    list-style: none;
     display: flex;
     gap: 20px;
 }
 
-.nav-list li {
-    list-style: none;
-}
-
 .nav-list a {
-    color: #fff;
+    color: #00b300;
     text-decoration: none;
-    font-weight: 600;
+    font-size: 1rem;
     transition: color 0.3s ease;
 }
 
 .nav-list a:hover {
-    color: #00b300;
+    color: #00ff00;
 }
 
-/* Menü Toggle Butonu */
 .menu-toggle {
     display: none;
+    flex-direction: column;
+    gap: 4px;
     cursor: pointer;
 }
 
-.menu-toggle span {
+.hamburger {
     width: 25px;
     height: 3px;
-    background-color: #fff;
-    display: block;
-    margin: 5px 0;
+    background-color: #00b300;
 }
 
-/* Küçük Ekranlar İçin Menü */
 @media (max-width: 768px) {
     .menu-toggle {
-        display: block;
+        display: flex;
     }
 
     .nav-list {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #004d00;
         flex-direction: column;
-        width: 100%;
-        max-width: 300px;
-        display: none;
+        gap: 10px;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 20px;
+        position: absolute;
+        top: 70px;
+        right: -300px;
+        transition: right 0.3s ease;
     }
 
-    .nav-list li {
-        text-align: right;
-        padding: 10px 20px;
-        border-bottom: 1px solid #00b300;
-    }
-
-    .nav-list.show {
-        display: flex;
+    .nav-list.open {
+        right: 0;
     }
 }
