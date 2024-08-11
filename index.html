@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rawesa - Discord Botu</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="container">
             <h1>Rawesa</h1>
             <nav>
-                <ul>
+                <button class="menu-toggle" aria-label="Menüyü Aç">☰</button>
+                <ul class="nav-list">
                     <li><a href="#">Ana Sayfa</a></li>
                     <li><a href="#features">Özellikler</a></li>
                     <li><a href="#commands">Komutlar</a></li>
@@ -78,5 +79,14 @@
             <p>&copy; 2024 Rawesa. Tüm hakları saklıdır.</p>
         </div>
     </footer>
+    
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navList = document.querySelector('.nav-list');
+
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
