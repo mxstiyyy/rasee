@@ -1,48 +1,53 @@
-// Preloader
-window.addEventListener('load', () => {
-    document.querySelector('.preloader').style.opacity = '0';
+document.addEventListener('DOMContentLoaded', function() {
+    // Preloader
+    const preloader = document.querySelector('.preloader');
     setTimeout(() => {
-        document.querySelector('.preloader').style.display = 'none';
-    }, 500);
-});
+        preloader.style.opacity = '0';
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 500);
+    }, 1500);
 
-// Navbar Scroll Effect
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    header.classList.toggle('scrolled', window.scrollY > 50);
-});
+    // Hamburger Menu
+    const hamburger = document.getElementById('hamburger');
+    const navBar = document.getElementById('nav-bar');
+    hamburger.addEventListener('click', function() {
+        navBar.classList.toggle('open');
+    });
 
-// Navbar Toggle for Mobile
-const hamburger = document.getElementById('hamburger');
-const navList = document.querySelector('.nav-list');
+    // Carousel Animation
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    let currentIndex = 0;
+    setInterval(() => {
+        carouselItems[currentIndex].style.display = 'none';
+        currentIndex = (currentIndex + 1) % carouselItems.length;
+        carouselItems[currentIndex].style.display = 'block';
+    }, 3000);
 
-hamburger.addEventListener('click', () => {
-    navList.classList.toggle('open');
-});
+    // Comment Form Submission
+    const commentForm = document.getElementById('commentForm');
+    const commentList = document.getElementById('commentList');
+    const commentInput = document.getElementById('commentInput');
 
-// Comment Section
-const commentForm = document.getElementById('commentForm');
-const commentInput = document.getElementById('commentInput');
-const commentList = document.getElementById('commentList');
+    commentForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const commentText = commentInput.value.trim();
+        if (commentText !== '') {
+            const newComment = document.createElement('li');
+            newComment.textContent = commentText;
+            commentList.appendChild(newComment);
+            commentInput.value = '';
+        }
+    });
 
-commentForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const commentText = commentInput.value.trim();
-    if (commentText !== '') {
-        const listItem = document.createElement('li');
-        listItem.textContent = commentText;
-
-        // Delete Button
-        const deleteBtn = document.createElement('button');
-        deleteBtn.textContent = 'Sil';
-        deleteBtn.classList.add('delete-btn');
-        deleteBtn.addEventListener('click', () => {
-            commentList.removeChild(listItem);
+    // Basic Comment Moderation (Filtering Offensive Words)
+    const badWords = ["badword1", "badword2", "badword3"]; // Replace with actual words to filter
+    commentList.addEventListener('DOMNodeInserted', function(event) {
+        const newComment = event.target;
+        badWords.forEach(word => {
+            if (newComment.textContent.includes(word)) {
+                newComment.remove();
+            }
         });
-
-        listItem.appendChild(deleteBtn);
-        commentList.appendChild(listItem);
-        commentInput.value = '';
-    }
+    });
 });
