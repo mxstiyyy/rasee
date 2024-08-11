@@ -1,9 +1,9 @@
 /* Genel Ayarlar */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #f4f4f4;
     color: #333;
 }
 
@@ -16,7 +16,7 @@ body {
 
 /* Header */
 header {
-    background-color: #292b2c;
+    background-color: #004d00; /* Botun yeşil rengi */
     color: #fff;
     padding: 10px 0;
 }
@@ -24,12 +24,14 @@ header {
 header h1 {
     text-align: center;
     margin: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     text-align: center;
+    margin-top: 10px;
 }
 
 nav ul li {
@@ -40,25 +42,28 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    color: #a0e0a0; /* Hover rengi */
 }
 
 /* Hero Section */
 .hero {
-    background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+    background: url('https://via.placeholder.com/1200x400/004d00/fff') no-repeat center center/cover;
     color: #fff;
     text-align: center;
     padding: 100px 20px;
     margin: 20px 0;
+    border-bottom: 5px solid #004d00;
 }
 
 .hero h2 {
     font-size: 2.5em;
     margin: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 .hero p {
@@ -67,32 +72,41 @@ nav ul li a:hover {
 
 .btn {
     display: inline-block;
-    background-color: #007bff;
+    background-color: #00b300; /* Botun yeşil rengi */
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-    font-weight: bold;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: #008a00; /* Hover rengi */
+    transform: scale(1.05);
 }
 
 /* Features Section */
 .features {
     background-color: #fff;
     padding: 40px 20px;
+    border-top: 5px solid #004d00;
 }
 
 .features h2 {
     text-align: center;
     margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .features .feature {
     text-align: center;
     margin: 20px 0;
+    transition: transform 0.3s ease;
+}
+
+.features .feature:hover {
+    transform: scale(1.05);
 }
 
 .features h3 {
@@ -113,6 +127,7 @@ nav ul li a:hover {
 .commands h2 {
     text-align: center;
     margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .commands ul {
@@ -122,6 +137,13 @@ nav ul li a:hover {
 
 .commands ul li {
     margin: 10px 0;
+    transition: background-color 0.3s ease;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.commands ul li:hover {
+    background-color: #d1ffd1; /* Hover rengi */
 }
 
 /* Contact Section */
@@ -133,6 +155,7 @@ nav ul li a:hover {
 .contact h2 {
     text-align: center;
     margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .contact ul {
@@ -146,21 +169,23 @@ nav ul li a:hover {
 }
 
 .contact a {
-    color: #007bff;
+    color: #00b300; /* Botun yeşil rengi */
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .contact a:hover {
-    text-decoration: underline;
+    color: #008a00; /* Hover rengi */
 }
 
 /* Footer */
 footer {
-    background-color: #292b2c;
+    background-color: #004d00; /* Botun yeşil rengi */
     color: #fff;
     text-align: center;
     padding: 10px 0;
     position: fixed;
     width: 100%;
     bottom: 0;
+    border-top: 5px solid #00b300;
 }
