@@ -3,23 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rawesa Bot</title>
+    <title>Rawesa 7/24</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <!-- Preloader -->
-    <div class="preloader">
-        <div class="loader"></div>
-    </div>
+    <div class="preloader"></div>
 
     <!-- Navbar -->
-    <header>
-        <div class="menu-toggle" id="hamburger">
-            <span class="hamburger"></span>
-            <span class="hamburger"></span>
-            <span class="hamburger"></span>
-        </div>
-        <nav id="nav-bar">
+    <header class="header">
+        <div class="logo">Rawesa Bot</div>
+        <div id="hamburger" class="hamburger">&#9776;</div>
+        <nav id="nav-bar" class="nav-bar">
             <ul class="nav-list">
                 <li><a href="#home">Ana Sayfa</a></li>
                 <li><a href="#features">Özellikler</a></li>
@@ -29,58 +25,42 @@
         </nav>
     </header>
 
-    <!-- Ana İçerik -->
-    <main>
-        <!-- Hareketli Arka Plan -->
-        <section id="home" class="hero-section">
-            <div class="overlay"></div>
-            <h1>Rawesa Bot'a Hoşgeldiniz</h1>
-            <p>Discord botu ile sunucunuzda daha fazla eğlence ve moderasyon.</p>
-        </section>
+    <!-- Ana Bölüm -->
+    <section id="home" class="intro-section">
+        <h1>Rawesa Discord Botu</h1>
+        <p>Sunucunuz için mükemmel özellikler sunan gelişmiş bir bot.</p>
+        <a href="#features" class="cta-button">Özellikleri Keşfet</a>
+    </section>
 
-        <!-- Özellikler Bölümü -->
-        <section id="features" class="features-section">
-            <h2>Özellikler</h2>
-            <div class="carousel">
-                <div class="carousel-item">
-                    <h3>Moderatör Komutları</h3>
-                    <p>Rawesa botu ile sunucunuzu kolayca yönetin.</p>
-                </div>
-                <div class="carousel-item">
-                    <h3>Eğlenceli Oyunlar</h3>
-                    <p>Kullanıcılarınızla birlikte oyunlar oynayın.</p>
-                </div>
-                <div class="carousel-item">
-                    <h3>Kişiselleştirilebilir</h3>
-                    <p>Rawesa botunu sunucunuza göre özelleştirin.</p>
-                </div>
-            </div>
-        </section>
+    <!-- Özellikler Bölümü -->
+    <section id="features" class="features-section">
+        <div class="carousel">
+            <div class="carousel-item">Otomatik Moderasyon</div>
+            <div class="carousel-item">Kapsamlı Eğlence Komutları</div>
+            <div class="carousel-item">Detaylı Sunucu Yönetimi</div>
+        </div>
+    </section>
 
-        <!-- Yorumlar Bölümü -->
-        <section id="comments" class="comments-section">
-            <h2>Yorumlar</h2>
-            <form id="commentForm">
-                <input type="text" id="commentInput" placeholder="Yorumunuzu Yazın..." required>
-                <button type="submit">Gönder</button>
-            </form>
-            <ul id="commentList">
-                <!-- Yorumlar burada listelenecek -->
-            </ul>
-        </section>
+    <!-- Yorumlar Bölümü -->
+    <section id="comments" class="comments-section">
+        <h2>Yorumlar</h2>
+        <ul id="commentList" class="comment-list"></ul>
+        <form id="commentForm">
+            <input id="commentInput" type="text" placeholder="Yorumunuzu yazın..." required>
+            <button type="submit">Gönder</button>
+        </form>
+    </section>
 
-        <!-- İletişim Bölümü -->
-        <section id="contact" class="contact-section">
-            <h2>İletişim</h2>
-            <p>Bize ulaşmak için aşağıdaki formu doldurun.</p>
-        </section>
-    </main>
+    <!-- İletişim Bölümü -->
+    <section id="contact" class="contact-section">
+        <h2>İletişim</h2>
+        <p>İletişime geçmek için aşağıdaki butona tıklayın.</p>
+        <a href="mailto:example@domain.com" class="contact-button">E-Posta Gönder</a>
+    </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Rawesa Bot. Tüm hakları saklıdır.</p>
+    <footer class="footer">
+        <p>&copy; 2024 Rawesa Bot - Tüm Hakları Saklıdır.</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
