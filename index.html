@@ -1,92 +1,81 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rawesa - Discord Botu</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Rawesa - Discord Bot</title>
     <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Rawesa</h1>
-            <nav>
-                <button class="menu-toggle" aria-label="Menüyü Aç">☰</button>
-                <ul class="nav-list">
-                    <li><a href="#">Ana Sayfa</a></li>
-                    <li><a href="#features">Özellikler</a></li>
-                    <li><a href="#commands">Komutlar</a></li>
-                    <li><a href="#contact">İletişim</a></li>
-                </ul>
-            </nav>
-        </div>
+    <!-- Açılış animasyonu için bir div -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Menü -->
+    <nav class="navbar">
+        <div class="brand-title">Rawesa</div>
+        <a href="#" class="menu-toggle"><span></span></a>
+        <ul class="nav-list">
+            <li><a href="#features">Özellikler</a></li>
+            <li><a href="#commands">Komutlar</a></li>
+            <li><a href="#contact">İletişim</a></li>
+        </ul>
+    </nav>
+
+    <!-- Ana İçerik -->
+    <header class="hero">
+        <h1>Rawesa Discord Botu</h1>
+        <p>Discord sunucularınızda üstün özellikler sunan bot.</p>
+        <a href="#" class="cta-button">Hemen Davet Et</a>
     </header>
-    
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h2>Rawesa - Discord Botunuz</h2>
-                <p>Rawesa, sunucularınız için güçlü ve eğlenceli bir Discord botudur. Basit komutlar ve etkili yönetim araçları ile sunucunuzu daha iyi hale getirin.</p>
-                <a href="#invite" class="btn">Botu Davet Et</a>
-            </div>
-        </section>
 
-        <section id="features" class="features">
-            <div class="container">
-                <h2>Özellikler</h2>
-                <div class="feature">
-                    <h3>Yönetim Araçları</h3>
-                    <p>Sunucu yönetimini kolaylaştıran kapsamlı araçlar.</p>
-                </div>
-                <div class="feature">
-                    <h3>Eğlenceli Komutlar</h3>
-                    <p>Sunucunuza renk katacak çeşitli eğlenceli komutlar.</p>
-                </div>
-                <div class="feature">
-                    <h3>Özelleştirilebilir</h3>
-                    <p>Botu ihtiyacınıza göre özelleştirin ve yönetin.</p>
-                </div>
-            </div>
-        </section>
+    <section id="features" class="features">
+        <h2>Özellikler</h2>
+        <p>Rawesa botunun öne çıkan özellikleri:</p>
+        <ul>
+            <li>Gelişmiş Moderasyon Komutları</li>
+            <li>Oyun ve Eğlence Komutları</li>
+            <li>Kullanıcıya Özel Özelleştirme Seçenekleri</li>
+            <li>7/24 Kesintisiz Hizmet</li>
+        </ul>
+    </section>
 
-        <section id="commands" class="commands">
-            <div class="container">
-                <h2>Komutlar</h2>
-                <ul>
-                    <li><strong>!ping</strong> - Botun yanıt süresini gösterir.</li>
-                    <li><strong>!kick [kullanıcı]</strong> - Belirtilen kullanıcıyı sunucudan atar.</li>
-                    <li><strong>!ban [kullanıcı]</strong> - Belirtilen kullanıcıyı sunucudan yasaklar.</li>
-                    <li><strong>!help</strong> - Komutlar hakkında yardım alırsınız.</li>
-                </ul>
-            </div>
-        </section>
+    <section id="commands" class="commands">
+        <h2>Komutlar</h2>
+        <p>Rawesa botunun sunduğu çeşitli komutları keşfedin:</p>
+        <ul>
+            <li>r!ban - Kullanıcıyı sunucudan yasaklar.</li>
+            <li>r!kick - Kullanıcıyı sunucudan atar.</li>
+            <li>r!mute - Kullanıcıyı sessize alır.</li>
+            <li>r!help - Tüm komutları listeler.</li>
+        </ul>
+    </section>
 
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2>İletişim</h2>
-                <p>Bot hakkında daha fazla bilgi almak veya destek talebinde bulunmak için aşağıdaki bağlantılardan bize ulaşabilirsiniz:</p>
-                <ul>
-                    <li><a href="https://discord.gg/your-invite-link" target="_blank">Discord Sunucusu</a></li>
-                    <li><a href="mailto:contact@example.com">E-posta</a></li>
-                </ul>
-            </div>
-        </section>
-    </main>
+    <section id="comments" class="comments">
+        <h2>Yorumlar</h2>
+        <form id="commentForm">
+            <textarea id="commentInput" placeholder="Yorumunuzu buraya yazın..."></textarea>
+            <button type="submit">Gönder</button>
+        </form>
+        <ul id="commentList"></ul>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>İletişim</h2>
+        <p>Rawesa botu hakkında sorularınız mı var? Bize ulaşın:</p>
+        <ul>
+            <li><a href="mailto:info@rawesa.com">info@rawesa.com</a></li>
+            <li><a href="https://discord.gg/xxxxx">Discord Sunucumuz</a></li>
+        </ul>
+    </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Rawesa. Tüm hakları saklıdır.</p>
-        </div>
+        <p>&copy; 2024 Rawesa Discord Bot</p>
     </footer>
-    
-    <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navList = document.querySelector('.nav-list');
 
-        menuToggle.addEventListener('click', () => {
-            navList.classList.toggle('active');
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
