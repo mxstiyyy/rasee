@@ -1,55 +1,166 @@
-/* Genel stil ayarları */
+/* Genel Ayarlar */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f0f0f0;
+    color: #333;
 }
 
+/* Container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
 header {
-    background-color: #333;
-    color: green;
-    padding: 1rem;
-    text-align: center;
+    background-color: #292b2c;
+    color: #fff;
+    padding: 10px 0;
 }
 
 header h1 {
+    text-align: center;
     margin: 0;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    text-align: center;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 1rem;
+    margin: 0 15px;
 }
 
 nav ul li a {
-    color: darkgreen;
+    color: #fff;
     text-decoration: none;
+    font-weight: bold;
 }
 
 nav ul li a:hover {
     text-decoration: underline;
 }
 
-main {
-    padding: 2rem;
-}
-
-section {
-    margin-bottom: 2rem;
-}
-
-footer {
-    background-color: #333;
-    color: white;
+/* Hero Section */
+.hero {
+    background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+    color: #fff;
     text-align: center;
-    padding: 1rem;
+    padding: 100px 20px;
+    margin: 20px 0;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Features Section */
+.features {
+    background-color: #fff;
+    padding: 40px 20px;
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.features .feature {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.features h3 {
+    font-size: 1.5em;
+}
+
+.features p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Commands Section */
+.commands {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+}
+
+.commands h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.commands ul {
+    list-style: none;
+    padding: 0;
+}
+
+.commands ul li {
+    margin: 10px 0;
+}
+
+/* Contact Section */
+.contact {
+    background-color: #fff;
+    padding: 40px 20px;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.contact ul li {
+    margin: 10px 0;
+}
+
+.contact a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #292b2c;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
     position: fixed;
-    bottom: 0;
     width: 100%;
+    bottom: 0;
 }
