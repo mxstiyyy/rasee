@@ -1,43 +1,48 @@
-// Preloader animasyonu kaldırma
+// Preloader
 window.addEventListener('load', () => {
-    const preloader = document.querySelector('.preloader');
-    preloader.style.opacity = '0';
+    document.querySelector('.preloader').style.opacity = '0';
     setTimeout(() => {
-        preloader.style.display = 'none';
+        document.querySelector('.preloader').style.display = 'none';
     }, 500);
 });
 
-// Menü Toggle İşlemi
-const menuToggle = document.querySelector('.menu-toggle');
-const navList = document.querySelector('.nav-list');
-
-menuToggle.addEventListener('click', () => {
-    navList.classList.toggle('show');
+// Navbar Scroll Effect
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    header.classList.toggle('scrolled', window.scrollY > 50);
 });
 
-// Yorumlar Form İşlemleri
+// Navbar Toggle for Mobile
+const hamburger = document.getElementById('hamburger');
+const navList = document.querySelector('.nav-list');
+
+hamburger.addEventListener('click', () => {
+    navList.classList.toggle('open');
+});
+
+// Comment Section
 const commentForm = document.getElementById('commentForm');
+const commentInput = document.getElementById('commentInput');
 const commentList = document.getElementById('commentList');
 
 commentForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const commentInput = document.getElementById('commentInput');
-    const newComment = document.createElement('li');
-    newComment.textContent = commentInput.value;
+    
+    const commentText = commentInput.value.trim();
+    if (commentText !== '') {
+        const listItem = document.createElement('li');
+        listItem.textContent = commentText;
 
-    // Küfür filtresi
-    const badWords = ['badword1', 'badword2', 'küfür1', 'küfür2']; // İstenmeyen kelimeler
-    let isClean = true;
-    badWords.forEach(word => {
-        if (newComment.textContent.toLowerCase().includes(word)) {
-            isClean = false;
-        }
-    });
+        // Delete Button
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Sil';
+        deleteBtn.classList.add('delete-btn');
+        deleteBtn.addEventListener('click', () => {
+            commentList.removeChild(listItem);
+        });
 
-    if (isClean) {
-        commentList.appendChild(newComment);
+        listItem.appendChild(deleteBtn);
+        commentList.appendChild(listItem);
         commentInput.value = '';
-    } else {
-        alert('Küfür veya istenmeyen içerik algılandı.');
     }
 });
