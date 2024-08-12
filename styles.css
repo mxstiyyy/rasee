@@ -1,173 +1,12 @@
-/* SF Pro Display Font Ekleme */
-@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600;700&display=swap');
 
-* {
+/* Temel Stiller */
+body {
+    font-family: 'SF Pro Display', sans-serif;
+    background-color: #0d0d0d;
+    color: #ffffff;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'SF Pro Display', sans-serif;
-}
-
-body {
-    background-color: #001a00;
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #004d00;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 10;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-
-.hamburger {
-    font-size: 2rem;
-    display: none;
-    cursor: pointer;
-}
-
-.nav-bar {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.nav-list {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-list li {
-    transition: all 0.3s ease;
-}
-
-.nav-list li:hover {
-    transform: scale(1.1);
-}
-
-.nav-list a {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.nav-list a:hover {
-    color: #00ff00;
-}
-
-.intro-section {
-    text-align: center;
-    padding: 150px 20px 50px;
-    background-color: #002800;
-    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-.intro-section h1 {
-    font-size: 3rem;
-    color: #00ff00;
-    margin-bottom: 20px;
-}
-
-.intro-section p {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-}
-
-.cta-button {
-    background-color: #00ff00;
-    color: #001a00;
-    padding: 15px 30px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #007300;
-    color: #ffffff;
-}
-
-.features-section {
-    padding: 50px 20px;
-    background-color: #003300;
-    text-align: center;
-}
-
-.carousel {
-    display: flex;
-    overflow: hidden;
-    position: relative;
-    height: 200px;
-}
-
-.carousel-item {
-    display: none;
-    font-size: 2rem;
-    color: #00ff00;
-    padding: 50px;
-    animation: fadeInSlide 1s ease-in-out;
-}
-
-.comment-list {
-    list-style: none;
-    padding: 20px;
-    max-height: 200px;
-    overflow-y: scroll;
-    border: 1px solid #00ff00;
-    margin-bottom: 20px;
-}
-
-.comment-list li {
-    background-color: #002800;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.contact-section {
-    padding: 50px 20px;
-    background-color: #004d00;
-    text-align: center;
-}
-
-.contact-button {
-    background-color: #00ff00;
-    color: #001a00;
-    padding: 15px 30px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.contact-button:hover {
-    background-color: #007300;
-    color: #ffffff;
-}
-
-.footer {
-    padding: 20px;
-    background-color: #003300;
-    text-align: center;
-    font-size: 0.9rem;
+    overflow-x: hidden;
 }
 
 /* Preloader */
@@ -177,71 +16,212 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #001a00;
-    z-index: 999;
+    background-color: #0d0d0d;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity 0.5s ease-out;
+    z-index: 100;
+    transition: opacity 0.5s ease;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+/* Header */
+header {
+    position: fixed;
+    width: 100%;
+    background-color: #1a1a1a;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    z-index: 99;
 }
 
-@keyframes fadeInSlide {
-    0% {
+.logo {
+    color: #00ff00;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav-bar {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-bar li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-bar li a:hover {
+    background-color: #00ff00;
+    color: #000000;
+    border-radius: 5px;
+}
+
+/* Ana içerik */
+.about-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    padding: 20px;
+}
+
+.about-section h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease forwards;
+}
+
+.about-section p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    animation: fadeInUp 1.5s ease forwards;
+}
+
+.cta-button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #00ff00;
+    color: #000000;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    animation: bounceIn 2s ease infinite;
+}
+
+.cta-button:hover {
+    transform: scale(1.1);
+}
+
+/* Özellikler */
+.features-section {
+    padding: 60px 20px;
+    background-color: #1a1a1a;
+    text-align: center;
+}
+
+.features-section h2 {
+    font-size: 2.5em;
+    color: #00ff00;
+    margin-bottom: 40px;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    gap: 20px;
+    padding: 20px;
+}
+
+.carousel-item {
+    min-width: 250px;
+    background-color: #333333;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+    text-align: center;
+    color: #ffffff;
+}
+
+.carousel-item:hover {
+    transform: scale(1.1);
+}
+
+/* Yorumlar */
+.comments-section {
+    padding: 60px 20px;
+    background-color: #0d0d0d;
+}
+
+.comments-section h2 {
+    font-size: 2.5em;
+    color: #00ff00;
+    margin-bottom: 20px;
+}
+
+.comment-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.comment-list li {
+    background-color: #333333;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: #ffffff;
+    word-wrap: break-word;
+}
+
+.comment-form {
+    display: flex;
+    gap: 10px;
+}
+
+.comment-form input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.comment-form button {
+    padding: 10px 20px;
+    background-color: #00ff00;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Animasyonlar */
+@keyframes fadeInDown {
+    from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(-20px);
     }
-    100% {
+    to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* Mobile Responsiveness */
-@media screen and (max-width: 768px) {
-    .hamburger {
-        display: block;
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-
-    .nav-bar {
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        background-color: #004d00;
-        padding: 20px;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 100%;
-        z-index: 9;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
+}
 
-    .nav-bar.open {
-        display: flex;
+@keyframes bounceIn {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
     }
-
-    .intro-section h1 {
-        font-size: 2rem;
+    40% {
+        transform: translateY(-20px);
     }
-
-    .intro-section p {
-        font-size: 1.2rem;
-    }
-
-    .cta-button {
-        font-size: 1rem;
-        padding: 10px 20px;
-    }
-
-    .carousel-item {
-        font-size: 1.5rem;
-    }
-
-    .comment-list {
-        max-height: 150px;
+    60% {
+        transform: translateY(-10px);
     }
 }
