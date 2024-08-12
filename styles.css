@@ -1,227 +1,120 @@
-
-/* Temel Stiller */
+/* Genel Ayarlar */
 body {
-    font-family: 'SF Pro Display', sans-serif;
-    background-color: #0d0d0d;
-    color: #ffffff;
+    font-family: 'Coolvetica', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
 
-/* Preloader */
-.preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #0d0d0d;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-    transition: opacity 0.5s ease;
-}
-
 /* Header */
 header {
-    position: fixed;
-    width: 100%;
-    background-color: #1a1a1a;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-    z-index: 99;
+    background-color: #2E8B57;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 2px -2px gray;
 }
 
-.logo {
-    color: #00ff00;
-    font-size: 1.5em;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.nav-bar {
+header .container {
     display: flex;
-    gap: 15px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    justify-content: space-between;
     align-items: center;
 }
 
-.nav-bar li a {
-    color: #ffffff;
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
     text-decoration: none;
-    padding: 8px 16px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #90EE90;
+}
+
+/* Bölümler */
+.section {
+    padding: 50px 20px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: #2E8B57;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Buton */
+.button {
+    background-color: #2E8B57;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
-.nav-bar li a:hover {
-    background-color: #00ff00;
-    color: #000000;
-    border-radius: 5px;
-}
-
-/* Ana içerik */
-.about-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 100vh;
-    background-image: url('images/background.jpg');
-    background-size: cover;
-    background-position: center;
-    color: #ffffff;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-    padding: 20px;
-}
-
-.about-section h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-    animation: fadeInDown 1s ease forwards;
-}
-
-.about-section p {
-    font-size: 1.5em;
-    margin-bottom: 30px;
-    animation: fadeInUp 1.5s ease forwards;
-}
-
-.cta-button {
-    padding: 10px 20px;
-    font-size: 1.2em;
-    background-color: #00ff00;
-    color: #000000;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    animation: bounceIn 2s ease infinite;
-}
-
-.cta-button:hover {
-    transform: scale(1.1);
-}
-
-/* Özellikler */
-.features-section {
-    padding: 60px 20px;
-    background-color: #1a1a1a;
-    text-align: center;
-}
-
-.features-section h2 {
-    font-size: 2.5em;
-    color: #00ff00;
-    margin-bottom: 40px;
-}
-
-.carousel {
-    display: flex;
-    overflow: hidden;
-    gap: 20px;
-    padding: 20px;
-}
-
-.carousel-item {
-    min-width: 250px;
-    background-color: #333333;
-    padding: 20px;
-    border-radius: 10px;
-    transition: transform 0.5s ease;
-    text-align: center;
-    color: #ffffff;
-}
-
-.carousel-item:hover {
-    transform: scale(1.1);
+.button:hover {
+    background-color: #3CB371;
 }
 
 /* Yorumlar */
-.comments-section {
-    padding: 60px 20px;
-    background-color: #0d0d0d;
-}
-
-.comments-section h2 {
-    font-size: 2.5em;
-    color: #00ff00;
-    margin-bottom: 20px;
-}
-
-.comment-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 20px 0;
-}
-
-.comment-list li {
-    background-color: #333333;
-    padding: 15px;
+.comment {
+    background-color: #fff;
+    padding: 20px;
     margin-bottom: 10px;
     border-radius: 5px;
-    color: #ffffff;
-    word-wrap: break-word;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.comment-form {
-    display: flex;
-    gap: 10px;
+.comment p {
+    margin: 0;
 }
 
-.comment-form input[type="text"] {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #1a1a1a;
-    color: #ffffff;
+/* Footer */
+footer {
+    background-color: #2E8B57;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
 }
 
-.comment-form button {
-    padding: 10px 20px;
-    background-color: #00ff00;
-    color: #000000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+footer p {
+    margin: 0;
 }
 
-/* Animasyonlar */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Animasyon */
+.section {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards;
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-@keyframes bounceIn {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-20px);
-    }
-    60% {
-        transform: translateY(-10px);
     }
 }
