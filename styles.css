@@ -1,120 +1,70 @@
-/* Genel Ayarlar */
-body {
-    font-family: 'Coolvetica', sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+/* Geçişli renkli yazı için CSS kodu */
+.gradient-text {
+    background: linear-gradient(90deg, #FF6F61, #6B5B95);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
 }
 
-/* Header */
+.highlight-text {
+    background: linear-gradient(90deg, #FFB6C1, #FF6347);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-style: italic;
+}
+
 header {
-    background-color: #2E8B57;
-    color: white;
-    padding: 20px 0;
-    box-shadow: 0 4px 2px -2px gray;
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: #2E8B57; /* Yeşil arka plan */
+    color: #fff;
+    text-align: center;
+    padding: 50px;
+    position: relative;
+    overflow: hidden;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 24px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 3em;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
+header p {
+    font-size: 1.5em;
 }
 
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #90EE90;
-}
-
-/* Bölümler */
-.section {
-    padding: 50px 20px;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-h2 {
-    color: #2E8B57;
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-/* Buton */
-.button {
-    background-color: #2E8B57;
-    color: white;
+.cta-button {
+    display: inline-block;
     padding: 10px 20px;
+    background: #FF6347; /* Buton rengi */
+    color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    font-size: 1.2em;
+    margin-top: 20px;
 }
 
-.button:hover {
-    background-color: #3CB371;
+.cta-button:hover {
+    background: #FF4500; /* Buton hover rengi */
 }
 
-/* Yorumlar */
-.comment {
-    background-color: #fff;
+section {
     padding: 20px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.comment p {
-    margin: 0;
-}
-
-/* Footer */
-footer {
-    background-color: #2E8B57;
-    color: white;
     text-align: center;
-    padding: 20px 0;
 }
 
-footer p {
-    margin: 0;
+footer {
+    background-color: #2E8B57; /* Yeşil arka plan */
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 
-/* Animasyon */
-.section {
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 1s forwards;
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.comment {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
 }
