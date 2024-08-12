@@ -1,13 +1,16 @@
-// Scroll to Top Button
-window.addEventListener('scroll', () => {
-    const button = document.querySelector('.scroll-to-top');
-    if (window.scrollY > 300) {
-        button.style.display = 'block';
+// Scroll to Top Button Functionality
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    const scrollTopButton = document.querySelector(".scroll-to-top");
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollTopButton.style.display = "block";
     } else {
-        button.style.display = 'none';
+        scrollTopButton.style.display = "none";
     }
-});
+}
 
 function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }
