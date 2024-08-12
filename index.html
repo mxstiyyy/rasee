@@ -1,51 +1,58 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rawesa 7/24</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Trueno:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Lato:wght@400&family=Montserrat:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
-            <a href="#home" class="logo">Rawesa Bot</a>
             <ul>
+                <li><a href="#home">Ana Sayfa</a></li>
                 <li><a href="#features">Özellikler</a></li>
                 <li><a href="#about">Hakkında</a></li>
-                <li><a href="#add-bot">Botu Sunucuya Ekle</a></li>
+                <li><a href="#contact">İletişim</a></li>
             </ul>
         </nav>
-        <section class="hero">
-            <h1 class="gradient-text">Rawesa Bot</h1>
-            <p class="highlight-text">Botunuzun en iyi versiyonu!</p>
-            <a href="#add-bot" class="cta-button">Botu Sunucuya Ekle</a>
-        </section>
     </header>
 
+    <section id="home" class="parallax">
+        <div class="content">
+            <h1>Rawesa Bot</h1>
+            <p>En iyi Discord botu deneyimini yaşayın!</p>
+            <a href="#contact" class="cta-button">Botu Sunucuya Ekle</a>
+        </div>
+    </section>
+
     <section id="features">
-        <h2 class="highlight-text">Özellikler</h2>
-        <ul>
-            <li><span class="gradient-text">Yüksek Performans</span></li>
-            <li><span class="gradient-text">Kolay Kullanım</span></li>
-            <li><span class="gradient-text">7/24 Destek</span></li>
-        </ul>
+        <h2>Özellikler</h2>
+        <!-- Özellikler burada belirtilecek -->
     </section>
 
     <section id="about">
-        <h2 class="highlight-text">Yapımcı Hakkında</h2>
-        <p>Rawesa botunun yapımcısı <span class="gradient-text">Reas</span> tarafından geliştirilmiştir. Reas, bot dünyasında deneyimli bir geliştiricidir.</p>
+        <h2>Hakkında</h2>
+        <p>Rawesa Bot'un yapımcısı: Reas</p>
     </section>
 
-    <section id="add-bot">
-        <h2 class="highlight-text">Botu Sunucuya Ekle</h2>
-        <p>Botunuzu sunucunuza eklemek için aşağıdaki bağlantıyı kullanabilirsiniz:</p>
-        <a href="#" class="cta-button">Botu Ekle</a>
+    <section id="contact">
+        <h2>İletişim</h2>
+        <div class="social-media">
+            <a href="https://discord.gg/your-invite-link" class="social-icon">
+                <img src="discord-icon.svg" alt="Discord">
+            </a>
+        </div>
     </section>
 
     <footer>
         <p>&copy; 2024 Rawesa Bot. Tüm hakları saklıdır.</p>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <button onclick="scrollToTop()" class="scroll-to-top">↑</button>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
