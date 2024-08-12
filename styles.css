@@ -16,12 +16,45 @@ header {
     background-color: #333;
     color: #fff;
     padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo .logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.cta-button-nav {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #228B22;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button-nav:hover {
+    background-color: #006400;
+    transform: scale(1.05);
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     text-align: center;
+    margin: 0;
 }
 
 nav ul li {
@@ -134,4 +167,40 @@ footer {
 
 .parallax, .scroll-to-top {
     animation: fadeIn 1s ease-out;
+}
+
+/* Aurora Effect */
+.aurora {
+    position: relative;
+    font-size: 3em;
+    color: #fff;
+    background: linear-gradient(45deg, #ff7a18, #af002d 70%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: aurora 5s infinite alternate;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes aurora {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Scroll to Top Button Script */
+window.addEventListener('scroll', () => {
+    const button = document.querySelector('.scroll-to-top');
+    if (window.scrollY > 300) {
+        button.style.display = 'block';
+    } else {
+        button.style.display = 'none';
+    }
+});
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
