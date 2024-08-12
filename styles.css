@@ -1,9 +1,10 @@
 /* Genel stil ayarları */
 body {
     margin: 0;
-    font-family: 'Coolvetica', sans-serif;
+    font-family: 'Trueno', sans-serif;
     color: #fff;
     background-color: #000;
+    scroll-behavior: smooth;
 }
 
 /* Navigasyon ve header */
@@ -12,9 +13,10 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    position: absolute;
+    position: fixed;
     width: 100%;
     top: 0;
+    background: rgba(0, 0, 0, 0.7);
     z-index: 1000;
 }
 
@@ -37,6 +39,11 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #00ff00; /* Hover rengi */
 }
 
 /* Hero section */
@@ -49,44 +56,34 @@ nav ul li a {
     text-align: center;
     position: relative;
     color: #fff;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 0;
 }
 
 .hero h1 {
     font-size: 4em;
-    z-index: 1;
+    font-weight: 700;
 }
 
 .hero p {
     font-size: 1.5em;
     margin-top: 10px;
-    z-index: 1;
 }
 
 .cta-button {
     display: inline-block;
     padding: 10px 20px;
-    background: #FF6347;
+    background: #32CD32; /* Yeşil renk */
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
     font-size: 1.2em;
     margin-top: 20px;
-    font-family: 'Coolvetica', sans-serif;
-    z-index: 1;
+    font-weight: bold;
+    transition: background 0.3s ease;
 }
 
 .cta-button:hover {
-    background: #FF4500;
+    background: #228B22; /* Daha koyu yeşil */
 }
 
 /* Diğer bölümler */
@@ -96,31 +93,21 @@ section {
 }
 
 .highlight-text {
-    background: linear-gradient(90deg, #FFB6C1, #FF6347);
+    background: linear-gradient(90deg, rgba(0, 255, 0, 0.3), rgba(0, 255, 0, 0.1));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-style: italic;
+    font-weight: normal;
 }
 
 .gradient-text {
-    background: linear-gradient(90deg, #FF6F61, #6B5B95);
+    background: linear-gradient(90deg, #00ff00, #006400);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
 }
 
-.comment {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin: 10px auto;
-    padding: 10px;
-    width: 80%;
-}
-
-/* Footer */
 footer {
-    background-color: #2E8B57;
+    background-color: #2E8B57; /* Yeşil arka plan */
     color: #fff;
     text-align: center;
     padding: 10px;
