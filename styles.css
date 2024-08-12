@@ -1,117 +1,137 @@
-/* Genel stil ayarları */
+/* Genel Stiller */
 body {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
-    font-family: 'Trueno', sans-serif;
-    color: #fff;
-    background-color: #000;
-    scroll-behavior: smooth;
+    padding: 0;
+    color: #333;
+    background-color: #f0f0f0;
 }
 
-/* Navigasyon ve header */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 1000;
-}
-
-nav .logo {
-    font-size: 2em;
-    color: #fff;
+a {
     text-decoration: none;
+    color: inherit;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
 }
 
 nav ul {
     list-style: none;
-    display: flex;
+    padding: 0;
+    text-align: center;
 }
 
 nav ul li {
-    margin-left: 20px;
+    display: inline;
+    margin: 0 15px;
 }
 
 nav ul li a {
     color: #fff;
-    text-decoration: none;
-    font-size: 1em;
-    transition: color 0.3s ease;
+    font-weight: bold;
 }
 
-nav ul li a:hover {
-    color: #00ff00; /* Hover rengi */
-}
-
-/* Hero section */
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.parallax {
+    background-image: url('your-image.jpg');
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     position: relative;
+    text-align: center;
     color: #fff;
-    background: rgba(0, 0, 0, 0.5);
 }
 
-.hero h1 {
-    font-size: 4em;
-    font-weight: 700;
+.parallax .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.hero p {
+.parallax h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.parallax p {
     font-size: 1.5em;
-    margin-top: 10px;
 }
 
 .cta-button {
     display: inline-block;
     padding: 10px 20px;
-    background: #32CD32; /* Yeşil renk */
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
     font-size: 1.2em;
-    margin-top: 20px;
-    font-weight: bold;
-    transition: background 0.3s ease;
+    color: #fff;
+    background-color: #228B22;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .cta-button:hover {
-    background: #228B22; /* Daha koyu yeşil */
+    background-color: #006400;
+    transform: scale(1.05);
 }
 
-/* Diğer bölümler */
 section {
-    padding: 60px 20px;
+    padding: 50px;
     text-align: center;
 }
 
-.highlight-text {
-    background: linear-gradient(90deg, rgba(0, 255, 0, 0.3), rgba(0, 255, 0, 0.1));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: normal;
+.social-media {
+    margin: 20px 0;
 }
 
-.gradient-text {
-    background: linear-gradient(90deg, #00ff00, #006400);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
+.social-icon {
+    display: inline-block;
+    margin: 0 10px;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
 }
 
 footer {
-    background-color: #2E8B57; /* Yeşil arka plan */
+    background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px;
+    padding: 10px 0;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
     position: fixed;
-    width: 100%;
-    bottom: 0;
+    bottom: 20px;
+    right: 20px;
+    background-color: #228B22;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+.scroll-to-top:hover {
+    background-color: #006400;
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.parallax, .scroll-to-top {
+    animation: fadeIn 1s ease-out;
 }
