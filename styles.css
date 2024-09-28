@@ -1,7 +1,7 @@
 /* SF Pro Bold fontunu dahil etme */
 @font-face {
     font-family: 'SF Pro Bold';
-    src: url('fonts/SFPRODISPLAYBOLD.ttf') format('truetype');
+    src: url('SFPRODISPLAYBOLD.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
